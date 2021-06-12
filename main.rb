@@ -2,9 +2,9 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'pg'
 
-#enable :sessions
+# enable :sessions
 
-#require_relative 'db/db'
+# require_relative 'db/db'
 # require_relative 'models/food'
 # require_relative 'models/user'
 # require_relative 'helpers/sessions_helper'
@@ -17,7 +17,11 @@ get '/' do
   erb :index
 end
 
+get '/display' do
+  erb :display
+end
 
 
-
-
+# get '/create' do
+#   erb :create
+# end
