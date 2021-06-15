@@ -8,7 +8,7 @@ require_relative 'db/db'
 require_relative 'models/cakes'
 require_relative 'models/user'
 require_relative 'helpers/sessions_helper'
-require_relative 'controllers/food_controller'
+require_relative 'controllers/cakes_controller'
 require_relative 'controllers/users_controller'
 require_relative 'controllers/sessions_controller'
 
@@ -25,9 +25,9 @@ get '/signup' do
   erb :signup
 end
 
-get '/display' do
-  erb :display
-end
+# get '/display' do
+#   erb :display
+# end
 
 get '/create' do
   erb :create

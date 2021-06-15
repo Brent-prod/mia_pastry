@@ -1,6 +1,6 @@
 get '/cakes' do
-  results = all_cakes()
-  erb :'/cakes/index', locals: { menu: results }
+  cakes = all_cakes()
+  erb :'/cakes/index', locals: { cakes: cakes }
 end
 
 # Displays create form
@@ -9,13 +9,13 @@ get '/cakes/create' do
 end
 
 post '/cakes' do
-  name = params[:name]
+  cake_name = params[:cake_name]
   price = params[:price]
   image_url = params[:image_url]
 
-  create_cakes(name, price, image_url)
+  create_cakes(cake_name, image_url, price)
 
-  redirect '/display'
+  redirect '/cakes'
 end
 
 # Display individual cakes
@@ -26,32 +26,30 @@ get '/cakes/:id' do |id|
   sql_query = "SELECT * FROM cakes WHERE id = $1;";
   params = [ id ];
   results = run_sql(sql_query, params)
-
-
-  erb :'/cakes/display', locals: { item: results[0]} # Create an individual cakes display ERB 
+  
+  erb :'/cakes/index', locals: { item: results[0]} # Create an individual cakes display ERB 
 end
 
-# Display individual cakes
+# edit individual cakes
 get '/cakes/:id/edit' do |id|
   # Look up the cakes by id, and pass it to the template
   sql_query = "SELECT * FROM cakes WHERE id = $1;"
   params = [ id ]
   results = run_sql(sql_query, params)
 
-
-  erb :'cakes/edit', locals: { item: results[0]} # Need to create this template
+  erb :'cakes/edit', locals: { item: results[0]} 
 end
 
 # Update individual cakes
 put '/cakes/:id' do |id|
   # Get the parameters
-  name = params[:name]
+  cake_name = params[:name]
   price = params[:price]
   image_url = params[:image_url]
 
   # Run an UPDATE SQL query
-  params = [name, price, image_url, id];
-  query = "UPDATE cakes SET name = $1, price = $2, image_url = $3 WHERE id = $4;"
+  params = [cake_name, price, image_url, id];
+  query = "UPDATE cakes SET cake_name = $1, price = $2, image_url = $3 WHERE id = $4;"
   run_sql( query, params )
 
   redirect "/cakes/#{id}"
