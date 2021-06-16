@@ -8,5 +8,5 @@ post '/users' do
 
   create_user(email, password)
 
-  redirect '/display'
+  redirect '/cakes'
 end

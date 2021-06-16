@@ -1,15 +1,25 @@
-<h1>HERE I WANT TO CREATE A LOGO + INSERT A LARGE PHOTO</h1>
+<h1>HERE I WANT TO INSERT A LARGE PHOTO</h1>
 <BR></BR>
-<a href="/cakes/create">Create a New Cake</a>
+
+<h2>Welcome <%= current_user["email"] %></h2>
+
+<a href="/cakes/new">Create a New Cake</a>
 <div>
     <section class="all-cakes"> 
         <% cakes.each do |cake| %>
             <section class="cakes-item">
                 <section class="info">
                     <h2><%= cake["cake_name"] %></h2>
-                    <img src="<%= cake["image_url"] %>" alt="">
-                    <h2><%= cake["price"] %></h2>
+                    <h2>$ <%= cake["price"] %></h2>
+                    
                     <a href="/cakes/<%= cake["id"] %>/edit">Edit</a>
+
+                    <form action="/cakes/<%= cake["id"] %>" method="POST"> 
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <input type="submit" value="Delete" />
+                    <img src="<%= cake["image_url"] %>" alt="">
+                    
+                    
                 </section>
             </section>
         <% end %>

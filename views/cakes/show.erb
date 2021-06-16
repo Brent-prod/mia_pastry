@@ -1,0 +1,13 @@
+
+<h2><%= cake["cake_name"] %></h2>
+<h2><%= cake["price"] %></h2>
+<form action="/cakes/<%= cake["id"] %>" method="POST"> 
+   <input type="hidden" name="_method" value="DELETE" />
+   <input type="submit" value="Delete" />
+</form>
+<br>
+<a href="/cakes">HOME</a>
+<br>
+<img src="<%= cake["image_url"] %>" alt="">
+<%# I need to understand how this works in more details%>
+

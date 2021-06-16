@@ -4,7 +4,7 @@ get '/cakes' do
 end
 
 # Displays create form
-get '/cakes/create' do
+get '/cakes/new' do
   erb :'cakes/new'
 end
 
@@ -26,8 +26,8 @@ get '/cakes/:id' do |id|
   sql_query = "SELECT * FROM cakes WHERE id = $1;";
   params = [ id ];
   results = run_sql(sql_query, params)
-  
-  erb :'/cakes/index', locals: { item: results[0]} # Create an individual cakes display ERB 
+
+  erb :'/cakes/show', locals: { cake: results[0]} # Create an individual cakes display ERB 
 end
 
 # edit individual cakes
@@ -37,13 +37,13 @@ get '/cakes/:id/edit' do |id|
   params = [ id ]
   results = run_sql(sql_query, params)
 
-  erb :'cakes/edit', locals: { item: results[0]} 
+  erb :'cakes/edit', locals: { cake: results[0]} 
 end
 
 # Update individual cakes
 put '/cakes/:id' do |id|
   # Get the parameters
-  cake_name = params[:name]
+  cake_name = params[:cake_name]
   price = params[:price]
   image_url = params[:image_url]
 
