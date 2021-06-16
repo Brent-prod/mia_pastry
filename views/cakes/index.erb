@@ -9,17 +9,16 @@
         <% cakes.each do |cake| %>
             <section class="cakes-item">
                 <section class="info">
-                    <h2><%= cake["cake_name"] %></h2>
+                    <h2>Cake name: <%= cake["cake_name"] %></h2>
                     <h2>$ <%= cake["price"] %></h2>
-                    
+
                     <a href="/cakes/<%= cake["id"] %>/edit">Edit</a>
 
                     <form action="/cakes/<%= cake["id"] %>" method="POST"> 
-                    <input type="hidden" name="_method" value="DELETE" />
-                    <input type="submit" value="Delete" />
-                    <img src="<%= cake["image_url"] %>" alt="">
-                    
-                    
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <input type="submit" value="Delete" />
+                        <img src="<%= cake["image_url"] %>" alt="">
+                    </form>
                 </section>
             </section>
         <% end %>
