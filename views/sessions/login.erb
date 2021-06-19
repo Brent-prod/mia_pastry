@@ -1,12 +1,17 @@
-<h1>Login</h1>
+<h1>Login Page</h1>
+<a href="/cakes">HOME</a>
 
 <%= error_message %>
+<br>
+
+<section class="login">
+    <form action="/sessions" method="POST">
+    <label for="email">Email: </label>
+    <input type="text" name="email">
+    <label for="password">Password: </label>
+    <input type="password" name="password">
+    <button>Login</button>
+  </form>
+</section>
 
 
-<form action="/sessions" method="POST">
-  <label for="email">Email: </label>
-  <input type="text" name="email">
-  <label for="password">Password: </label>
-  <input type="password" name="password">
-  <button>Login</button>
-</form>

@@ -1,11 +1,8 @@
-<%# <section class="header">
-    <video controls="controls" src="">
-    <div class="background-image"></div>
-</section> %>
 
 <h2>WELCOME <%= current_user["email"] %></h2>
+<a href="/cakes">HOME</a>
 
-<section>
+<section class="main">
     <div class="create">
         <a href="/cakes/new">CREATE A NEW CAKE</a>
     </div>
@@ -29,6 +26,22 @@
     </div>
 </section>
 
-<footer class="footer">
-    <H3>HERE I WANT TO INSERT THE FOOTER FOR CONTACT US SECTION, SITE MAP, SOCIAL MEDIA ETC</H3>
-</footer>   
+
+<%# <footer class="footer">
+    <section class="contact">
+        <ul>
+            <li>
+                <a href="https://www.google.com/maps/@-33.8980261,151.1816286,3a,75y,225.23h,82.87t/data=!3m6!1e1!3m4!1s56kD6b4OiEbO_f8w-LNO8Q!2e0!7i16384!8i8192">Address: 15 Erskineville Rd
+        Newtown, New South Wales</a> 
+            </li>
+                <li>Phone Number: 02 6588 6142</li>
+                <li>Email Mia_Cake_Shop@pastry.com</li>
+        <ul>
+            <li>
+                Instagram = @Mia_Cake_Shop
+                Facebook = address
+            </li>
+        </ul>
+        </ul>
+    </section>
+</footer>    %>
