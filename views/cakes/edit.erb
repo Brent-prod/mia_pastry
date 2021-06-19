@@ -1,21 +1,25 @@
-<form action="/cakes/<%= cake["id"] %>" method="POST">
-    <input type="hidden" name="_method" value="PUT">
-    <label for="cake_name">
-        Name:
-    </label>
-    <input name="cake_name" value="<%= cake["cake_name"] %>"/>
 
-    <label for="image_url">
-        Image Url:
-    </label>
-    <input name="image_url" value="<%= cake["image_url"] %>" />
+<section class="edit">
+    <form action="/cakes/<%= cake["id"] %>" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="cake_name">
+            Name:
+        </label>
+        <input name="cake_name" value="<%= cake["cake_name"] %>"/>
 
-    <label for="price">
-        Price:
-    </label>
-    <input name="price" value="<%= cake["price"] %>" />
+        <label for="image_url">
+            Image Url:
+        </label>
+        <input name="image_url" value="<%= cake["image_url"] %>" />
 
-    <input type="submit" value="Update cake" />
-</form>
+        <label for="price">
+            Price:
+        </label>
+        <input name="price" value="<%= cake["price"] %>" />
+
+        <input type="submit" value="Update cake" />
+    </form>
+</section>
+
 
 <a href="/cakes">HOME</a>

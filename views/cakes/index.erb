@@ -1,30 +1,34 @@
-<h1>HERE I WANT TO INSERT A LARGE PHOTO</h1>
-<BR></BR>
+<%# <section class="header">
+    <video controls="controls" src="">
+    <div class="background-image"></div>
+</section> %>
 
-<h2>Welcome <%= current_user["email"] %></h2>
+<h2>WELCOME <%= current_user["email"] %></h2>
 
-<a href="/cakes/new">Create a New Cake</a>
-<div>
-    <section class="all-cakes"> 
-        <% cakes.each do |cake| %>
-            <section class="cakes-item">
-                <section class="info">
-                    <h2>Cake name: <%= cake["cake_name"] %></h2>
-                    <h2>$ <%= cake["price"] %></h2>
-
-                    <a href="/cakes/<%= cake["id"] %>/edit">Edit</a>
-
-                    <form action="/cakes/<%= cake["id"] %>" method="POST"> 
-                        <input type="hidden" name="_method" value="DELETE" />
-                        <input type="submit" value="Delete" />
-                        <img src="<%= cake["image_url"] %>" alt="">
-                    </form>
+<section>
+    <div class="create">
+        <a href="/cakes/new">CREATE A NEW CAKE</a>
+    </div>
+        <div>
+         <section class="all-cakes"> 
+            <% cakes.each do |cake| %>
+                <section class="cakes-item">
+                    <section class="info">
+                        <h3><%= cake["cake_name"] %></h3>
+                        <h3>$ <%= cake["price"] %></h3>
+                        <a href="/cakes/<%= cake["id"] %>/edit">Edit</a>
+                    </section>
+                        <form action="/cakes/<%= cake["id"] %>" method="POST"> 
+                            <input type="hidden" name="_method" value="DELETE" />
+                            <input type="submit" value="Delete" />
+                            <img src="<%= cake["image_url"] %>" alt="">
+                        </form>
                 </section>
-            </section>
-        <% end %>
-    </section>
+            <% end %>
+        </section>
+    </div>
+</section>
 
-</div>
-<BR></BR>
-<H3>HERE I NEED TO INSERT THE FOOTER FOR CONTACT US SECTION, SITE MAP, SOCIAL MEDIA</H3>
-<footer></footer>
+<footer class="footer">
+    <H3>HERE I WANT TO INSERT THE FOOTER FOR CONTACT US SECTION, SITE MAP, SOCIAL MEDIA ETC</H3>
+</footer>   
