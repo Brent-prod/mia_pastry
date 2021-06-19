@@ -17,8 +17,8 @@ Please sign up using a valid email address and create a password
 ---
 ### Planning 
 I've written a wireframe of the site on paper first and also on app.diagrams.net
-![](images/Users/brent/sei/projects/project2/mia_pastry_shop/images/Screen Shot 2021-06-19 at 13.07.36.png)
-![](/Users/brent/sei/projects/project2/mia_pastry_shop/images/Screen Shot 2021-06-19 at 14.14.34.png)
+![](https://github.com/Brent-prod/mia_pastry/blob/master/images/Screen%20Shot%202021-06-19%20at%2013.07.36.png?raw=true)
+![](https://github.com/Brent-prod/mia_pastry/blob/master/images/Screen%20Shot%202021-06-19%20at%2014.14.34.png?raw=true)
 
 ---
 ### Known Bugs
